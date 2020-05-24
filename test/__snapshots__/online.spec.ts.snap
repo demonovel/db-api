@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getFileRecord 1`] = `
+Object {
+  "data": Object {
+    "exists": true,
+    "filename": Any<String>,
+    "href": Any<String>,
+    "timestamp": Any<Number>,
+  },
+  "error": false,
+  "timestamp": Any<Number>,
+}
+`;
+
+exports[`getFileRecord:error 1`] = `
+Object {
+  "error": true,
+  "message": Any<String>,
+  "timestamp": Any<Number>,
+}
+`;
