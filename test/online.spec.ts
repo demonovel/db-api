@@ -1,7 +1,7 @@
 import { getFileRecord } from '../lib/db/file';
 import { RequestInit } from 'node-fetch';
 
-test(`getFileRecord:error`, async () =>
+test(`getFileRecord:error`, async (done) =>
 {
 
 	let actual = await getFileRecord({
@@ -19,9 +19,11 @@ test(`getFileRecord:error`, async () =>
 		message: expect.any(String),
 	});
 
+	done();
+
 });
 
-test(`getFileRecord`, async () =>
+test(`getFileRecord`, async (done) =>
 {
 
 	let actual = await getFileRecord({
@@ -44,6 +46,8 @@ test(`getFileRecord`, async () =>
 			timestamp: expect.any(Number)
 		}
 	});
+
+	done();
 
 });
 
