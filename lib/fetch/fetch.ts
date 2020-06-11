@@ -6,6 +6,12 @@ import { RequestInit, RequestInfo, Response } from 'node-fetch';
 import Bluebird from 'bluebird';
 import isErrorCode from 'is-error-code';
 
+export interface IFetchRecordOptionsBase
+{
+	fetchOptions?: RequestInit;
+	server?: string;
+}
+
 export function fetch(url: RequestInfo,
 	init?: RequestInit & {
 		timeout?: number,
