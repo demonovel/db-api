@@ -1,6 +1,6 @@
 {
   "name": "@demonovel/db-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "homepage": "https://github.com/demonovel/db-api#readme",
   "bugs": {
@@ -29,7 +29,7 @@
     "npm:publish:lerna": "lerna publish --yes",
     "prepublish:lockfile": "npx sync-lockfile .",
     "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
-    "postpublish_": "git commit -m \"chore(release): publish\" .",
+    "postpublish": "git commit -m \"chore(release): publish\" . & git push & echo postpublish",
     "ncu": "npx yarn-tool ncu -u",
     "sort-package-json": "npx yarn-tool sort",
     "tsc:default": "tsc -p tsconfig.json",
