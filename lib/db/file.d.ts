@@ -1,9 +1,8 @@
 /**
  * Created by user on 2020/5/18.
  */
-import { IFileRecordRow, IFileRecordData } from '../types';
+import { IFileRecordRow, IFileRecordData, IFetchRecordOptionsBase } from '../types';
 import Bluebird from 'bluebird';
-import { IFetchRecordOptionsBase } from '../fetch/fetch';
 export interface IFileRecordOptions extends IFetchRecordOptionsBase {
     siteID: string;
     novelID: string | number;

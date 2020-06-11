@@ -1,5 +1,4 @@
-import { IRawRecordRow } from '../types';
-import { IFetchRecordOptionsBase } from '../fetch/fetch';
+import { IRawRecordRow, IFetchRecordOptionsBase } from '../types';
 import Bluebird from 'bluebird';
 export interface IRawRecordOptions extends IFetchRecordOptionsBase {
     rootKey: string;

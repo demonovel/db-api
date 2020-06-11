@@ -6,18 +6,12 @@ import { RequestInit, RequestInfo, Response } from 'node-fetch';
 import Bluebird from 'bluebird';
 import isErrorCode from 'is-error-code';
 
-export interface IFetchRecordOptionsBase
-{
-	fetchOptions?: RequestInit;
-	server?: string;
-}
-
-export function fetch(url: RequestInfo,
+export function fetchCore(url: RequestInfo,
 	init?: RequestInit & {
 		timeout?: number,
 	}, ...argv
 ): Bluebird<Response>
-export function fetch(...argv): Bluebird<Response>
+export function fetchCore(...argv): Bluebird<Response>
 {
 	let proxy = getProxy();
 	// @ts-ignore
@@ -25,6 +19,7 @@ export function fetch(...argv): Bluebird<Response>
 
 	if (proxy)
 	{
+		// @ts-ignore
 		options.agent = HttpProxyAgent(proxy);
 	}
 
@@ -61,4 +56,4 @@ export function fetch(...argv): Bluebird<Response>
 		})
 }
 
-export default fetch
+export default fetchCore

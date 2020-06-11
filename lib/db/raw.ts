@@ -1,8 +1,7 @@
-import { IFileRecordData, IFileRecordRow, IRawRecordRow } from '../types';
+import { IFileRecordData, IFileRecordRow, IRawRecordRow, IFetchRecordOptionsBase } from '../types';
 import { newFileURL } from '../util';
 import fetch from '../fetch';
 import { RequestInit } from 'node-fetch';
-import { IFetchRecordOptionsBase } from '../fetch/fetch';
 import Bluebird from 'bluebird';
 
 export interface IRawRecordOptions extends IFetchRecordOptionsBase

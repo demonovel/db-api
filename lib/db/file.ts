@@ -2,12 +2,11 @@
  * Created by user on 2020/5/18.
  */
 
-import { IFileRecordRow, IFileRecordData } from '../types';
+import { IFileRecordRow, IFileRecordData, IFetchRecordOptionsBase } from '../types';
 import { RequestInit } from 'node-fetch';
 import { newFileURL } from '../util';
 import fetch from '../fetch';
 import Bluebird from 'bluebird';
-import { IFetchRecordOptionsBase } from '../fetch/fetch';
 import { getRawRecord, putRawRecord } from './raw';
 
 export interface IFileRecordOptions extends IFetchRecordOptionsBase

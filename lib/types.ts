@@ -2,6 +2,8 @@
  * Created by user on 2020/5/18.
  */
 
+import { RequestInit, Response } from 'node-fetch';
+
 export interface IRawRecordRow<T>
 {
 	error: boolean,
@@ -22,4 +24,15 @@ export interface IFileRecordData
 	filename: string,
 
 	href: string,
+}
+
+export interface IFetchRecordOptionsBase
+{
+	fetchOptions?: RequestInit;
+	server?: string;
+
+	retry?: number;
+
+	tapCheck?(r: Response): any;
+	tapError?(e): any;
 }

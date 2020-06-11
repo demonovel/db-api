@@ -1,10 +1,6 @@
 import { RequestInit, RequestInfo, Response } from 'node-fetch';
 import Bluebird from 'bluebird';
-export interface IFetchRecordOptionsBase {
-    fetchOptions?: RequestInit;
-    server?: string;
-}
-export declare function fetch(url: RequestInfo, init?: RequestInit & {
+export declare function fetchCore(url: RequestInfo, init?: RequestInit & {
     timeout?: number;
 }, ...argv: any[]): Bluebird<Response>;
-export default fetch;
+export default fetchCore;
