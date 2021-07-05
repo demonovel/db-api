@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`describe url 1`] = `"https://api-file-server.vercel.app/db/file/wenku8/3007a3f8"`;
+
+exports[`describe url 2`] = `"https://api-file-server.vercel.app/file/wenku8/3007a3f8"`;
