@@ -20,6 +20,7 @@
     "."
   ],
   "scripts": {
+    "ci:install": "yarn add typescript@next",
     "coverage": "npx nyc yarn run test",
     "lint": "npx eslint **/*.ts",
     "test": "yarn run test:jest",
