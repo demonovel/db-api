@@ -17,10 +17,17 @@ export function fetch<T>(url: string, opts: RequestInit = {}, rawOptions?: IFetc
 			'Content-Type': 'application/json',
 			...opts.headers,
 		},
+		timeout: opts.timeout | 0,
 		signal,
 	}
 
-	const fn = () => {
+	if (!opts.timeout || opts.timeout <= 0)
+	{
+		delete opts.timeout;
+	}
+
+	const fn = () =>
+	{
 		opts.signal = signal;
 		return _fetch(url, opts)
 	};
@@ -44,7 +51,8 @@ function _reDo<T extends Response>(fn: () => Bluebird<T>, rawOptions: IFetchReco
 		.tapCatch(rawOptions.tapError)
 		.tap(rawOptions.tapCheck)
 
-		.catch(e => {
+		.catch(e =>
+		{
 			if (retry-- > 0)
 			{
 				return _reDo(fn, {

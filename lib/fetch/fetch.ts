@@ -5,6 +5,8 @@ import AbortController from 'abort-controller';
 import { RequestInit, RequestInfo, Response } from 'node-fetch';
 import Bluebird from 'bluebird';
 import isErrorCode from 'is-error-code';
+import AbortControllerTimer from 'abort-controller-timer';
+import { ITSResolvable } from 'ts-type/lib/generic';
 
 export function fetchCore(url: RequestInfo,
 	init?: RequestInit & {
@@ -23,17 +25,17 @@ export function fetchCore(...argv): Bluebird<Response>
 		options.agent = HttpProxyAgent(proxy);
 	}
 
+	let cb = (): ITSResolvable<void> => {};
+
 	if (options.timeout > 0 && !options.signal)
 	{
 		if (options.timeout |= 0)
 		{
-			const controller = new AbortController();
-			const timer = setTimeout(
-				() => controller.abort(),
-				options.timeout,
-			);
+			const controller = new AbortControllerTimer();
 
 			options.signal = controller.signal;
+
+			cb = () => controller.clear();
 		}
 		else
 		{
@@ -48,12 +50,14 @@ export function fetchCore(...argv): Bluebird<Response>
 
 	// @ts-ignore
 	return Bluebird.resolve(_fetch(...argv))
-		.tap(v => {
+		.tap(v =>
+		{
 			if (isErrorCode(v.status))
 			{
 				return Promise.reject(v)
 			}
 		})
+		.finally(cb)
 }
 
 export default fetchCore
