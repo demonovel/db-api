@@ -16,21 +16,24 @@
   "directories": {
     "lib": "lib"
   },
-  "workspaces": [
-    "."
-  ],
   "scripts": {
-    "ci:install": "yarn add typescript@next",
     "coverage": "npx nyc yarn run test",
     "lint": "npx eslint **/*.ts",
     "test": "yarn run test:jest",
-    "test:jest": "jest --coverage",
+    "test:jest": "jest",
     "test:mocha": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
-    "npm:publish": "npm publish",
+    "ci:install": "yarn add typescript@next",
+    "npm:publish": "yarn run preversion && npm publish && yarn run postpublishOnly",
+    "npm:publish:bump": "yarn-tool version && yarn run preversion && npm publish && yarn run postpublishOnly",
     "npm:publish:lerna": "lerna publish --yes",
+    "preversion": "yarn run test",
     "prepublish:lockfile": "npx sync-lockfile .",
-    "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
-    "postpublish": "git commit -m \"chore(release): publish\" . & git push & echo postpublish",
+    "prepublishOnly_": "yarn run ncu && yarn run sort-package-json && yarn run test",
+    "postpublish:changelog": "ynpx --quiet @yarn-tool/changelog && git add ./CHANGELOG.md",
+    "postpublish:git:commit": "git commit -m \"chore(release): publish\" . & echo postpublish:git:commit",
+    "postpublish:git:push": "git push --follow-tags",
+    "postpublish:git:tag": "ynpx --quiet @yarn-tool/tag",
+    "postpublishOnly": "yarn run postpublish:changelog && yarn run postpublish:git:commit && yarn run postpublish:git:tag && yarn run postpublish:git:push",
     "ncu": "npx yarn-tool ncu -u",
     "sort-package-json": "npx yarn-tool sort",
     "tsc:default": "tsc -p tsconfig.json",
@@ -38,22 +41,25 @@
   },
   "dependencies": {
     "abort-controller": "^3.0.0",
+    "abort-controller-timer": "^1.0.6",
     "bluebird": "^3.7.2",
-    "cross-fetch": "^3.0.4",
+    "cross-fetch": "^3.1.4",
     "hash-sum": "^2.0.0",
     "http-proxy-agent": "^4.0.1",
-    "is-error-code": "^1.0.0"
+    "is-error-code": "^1.0.0",
+    "ts-type": "^1.2.35",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.19",
-    "@types/bluebird": "^3.5.32",
+    "@bluelovers/tsconfig": "^1.0.22",
+    "@types/bluebird": "^3.5.35",
     "@types/hash-sum": "^1.0.0",
-    "@types/http-proxy-agent": "^2.0.2",
-    "@types/jest": "^26.0.0",
+    "@types/http-proxy-agent": "^4.0.0",
+    "@types/jest": "^26.0.23",
     "@types/node": "*",
-    "@types/node-fetch": "^2.5.7",
-    "jest": "^26.0.1",
-    "ts-jest": "^26.1.0"
+    "@types/node-fetch": "^2.5.10",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.3"
   },
   "publishConfig": {
     "access": "public"
