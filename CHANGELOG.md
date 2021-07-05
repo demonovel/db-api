@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.6](https://github.com/demonovel/db-api/compare/@demonovel/db-api@1.0.3...@demonovel/db-api@1.0.6) (2021-07-05)
+
+
+### ✨　Features
+
+* use abort-controller-timer ([c02b73d](https://github.com/demonovel/db-api/commit/c02b73d7a0c6865a0f14f9ae79f9386b571d29fc))
+* update server ([5de7cdd](https://github.com/demonovel/db-api/commit/5de7cddf5910d0db1a541b170a6bbd0be407f75f))
+* support retry and check options ([c37c3a3](https://github.com/demonovel/db-api/commit/c37c3a36d74117f9adc6fa242afa8aaa26d9cf33))
+* newLinkURL ([bae8d40](https://github.com/demonovel/db-api/commit/bae8d402e167af8e700a5b776f089388c00fb7b2))
+* add raw api ([80f2382](https://github.com/demonovel/db-api/commit/80f238214bc2c96042724e57f8d5983da1027aef))
+
+
+### 🚨　Tests
+
+* update test ([788e3ab](https://github.com/demonovel/db-api/commit/788e3aba0b3a62c6fb55dbf834a854e9559c9495))
+
+
+### 🛠　Build System
+
+* use `tslib` ([8fbffe5](https://github.com/demonovel/db-api/commit/8fbffe501052a80e01be938c9b7beef3a540d43c))
+
+
+### ⚙️　Continuous Integration
+
+* add coverage ([5a75294](https://github.com/demonovel/db-api/commit/5a75294e64cc87d923c68e0a7cb7e63f48588a9f))
+
+
+### ♻️　Chores
+
+* **release:** publish ([048d029](https://github.com/demonovel/db-api/commit/048d029a01591b210170305a06e82f71da811452))
+* **release:** publish ([302f634](https://github.com/demonovel/db-api/commit/302f63483c0d69bc6589b1ab687d7ecd94dfdde7))
+
+
+
+
+
 ## [1.0.3](https://github.com/demonovel/db-api/compare/@demonovel/db-api@1.0.2...@demonovel/db-api@1.0.3) (2020-05-24)
 
 
