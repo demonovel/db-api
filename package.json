@@ -41,25 +41,25 @@
   },
   "dependencies": {
     "abort-controller": "^3.0.0",
-    "abort-controller-timer": "^1.0.10",
+    "abort-controller-timer": "^1.0.11",
     "bluebird": "^3.7.2",
     "cross-fetch": "^3.1.4",
     "hash-sum": "^2.0.0",
     "http-proxy-agent": "^4.0.1",
     "is-error-code": "^1.0.0",
-    "ts-type": "^1.2.35",
+    "ts-type": "^1.2.39",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.24",
+    "@bluelovers/tsconfig": "^1.0.25",
     "@types/bluebird": "^3.5.36",
     "@types/hash-sum": "^1.0.0",
     "@types/http-proxy-agent": "^4.0.1",
     "@types/jest": "^26.0.24",
     "@types/node": "*",
-    "@types/node-fetch": "^2.5.11",
+    "@types/node-fetch": "^2.5.12",
     "jest": "^27.0.6",
-    "ts-jest": "^27.0.3"
+    "ts-jest": "^27.0.4"
   },
   "publishConfig": {
     "access": "public"

@@ -36,3 +36,9 @@ export interface IFetchRecordOptionsBase
 	tapCheck?(r: Response): any;
 	tapError?(e): any;
 }
+
+export enum EnumApiType
+{
+	file = 'file',
+	raw = 'raw',
+}
