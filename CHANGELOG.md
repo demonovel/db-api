@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/demonovel/db-api/compare/@demonovel/db-api@1.0.8...@demonovel/db-api@1.1.0) (2023-09-26)
+
+
+
+### 🛠　Build System
+
+* update build ([1d15239](https://github.com/demonovel/db-api/commit/1d15239fe713638b96dee5b6f2ebc0e7dabe4eff))
+
+
+### 📌　Dependencies
+
+* update deps ([02197e0](https://github.com/demonovel/db-api/commit/02197e00fe35ede72fe25007f3bb23e1494d6766))
+
+
+
 ## [1.0.8](https://github.com/demonovel/db-api/compare/@demonovel/db-api@1.0.7...@demonovel/db-api@1.0.8) (2021-07-26)
 
 
